@@ -1,0 +1,38 @@
+{
+  "name": "thinq-agent-sdk",
+  "version": "1.0.0",
+  "description": "Register your app as a ThinQ agent with one function call",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc",
+    "example": "ts-node examples/echo.ts"
+  },
+  "peerDependencies": {
+    "express": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.8.0",
+    "express": "^4.19.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "keywords": ["thinq", "agent", "sdk", "sse", "ai"],
+  "author": "Ankit Kumar <ankit.kumar.info22@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ankit-kumar-info22/thinq-agent-sdk.git"
+  }
+}
