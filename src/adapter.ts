@@ -18,6 +18,8 @@ export interface Task {
 export interface ThinQAdapterOptions {
   name: string;
   capabilities?: string[];
+  displayName:string;
+  role:string;
   /** Secret issued by ThinQ platform. Every inbound /run request must carry this in x-thinq-secret. */
   secret: string;
   /**
@@ -57,6 +59,8 @@ export function createEnvelope(
 
 export function createThinQAdapter({
   name,
+  displayName,
+  role,
   capabilities = [],
   secret,
   credentials = {},
@@ -77,6 +81,8 @@ export function createThinQAdapter({
   router.get('/info', (_req: Request, res: Response) => {
     res.json({
       name,
+      displayName,
+      role,
       agentId: resolvedAgentId,
       capabilities,
       accepts,
