@@ -33,7 +33,10 @@
     "agent",
     "sdk",
     "sse",
-    "ai"
+    "ai",
+    "zod",
+    "schema",
+    "streaming"
   ],
   "author": "Ankit Kumar <ankit.kumar.info22@gmail.com>",
   "license": "MIT",
