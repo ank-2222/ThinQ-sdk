@@ -30,6 +30,8 @@ export interface ThinQAdapterOptions {
   agentId?: string;
   accepts?: string[];
   produces?: string[];
+  requiredSecrets?: string[];
+  agentType?: 'native' | 'custom';
   inputSchema?: ZodType;
   outputSchema?: ZodType;
   handler: (task: Task, stream: Stream) => Promise<void>;
@@ -67,6 +69,8 @@ export function createThinQAdapter({
   agentId,
   accepts = [],
   produces = [],
+  requiredSecrets = [],
+  agentType = 'native',
   inputSchema,
   outputSchema,
   handler,
@@ -87,6 +91,8 @@ export function createThinQAdapter({
       capabilities,
       accepts,
       produces,
+      requiredSecrets,
+      agentType,
       inputSchema: inputSchema ? zodToJsonSchema(inputSchema) : null,
       outputSchema: outputSchema ? zodToJsonSchema(outputSchema) : null,
     });
